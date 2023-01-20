@@ -11,22 +11,22 @@ export class StudentsService {
   constructor(private httpClient: HttpClient) { }
 
   get(): Observable<Student[]> {
-    return this.httpClient.get<Student[]>('http://localhost:3000/students');
+    return this.httpClient.get<Student[]>('https://jason-server01-o6kabsmbv-yaiselwong-gmailcom.vercel.app/students');
   }
   create(payload: Student) {
-    return this.httpClient.post<Student>('http://localhost:3000/students',
+    return this.httpClient.post<Student>('https://jason-server01-o6kabsmbv-yaiselwong-gmailcom.vercel.app/students',
       payload);
   }
   getById(id: number): Observable<Student> {
-    return this.httpClient.get<Student>(`http://localhost:3000/students/${id}`);
+    return this.httpClient.get<Student>(`https://jason-server01-o6kabsmbv-yaiselwong-gmailcom.vercel.app/students/${id}`);
   }
   update(payload: Student): Observable<Student> {
     return this.httpClient.put<Student>(
-     `http://localhost:3000/students/${payload.id}`,
+     `https://jason-server01-o6kabsmbv-yaiselwong-gmailcom.vercel.app/students/${payload.id}`,
      payload
     );
    }
    delete(id: number) {
-    return this.httpClient.delete(`http://localhost:3000/students/${id}`);
+    return this.httpClient.delete(`https://jason-server01-o6kabsmbv-yaiselwong-gmailcom.vercel.app/students/${id}`);
    }
 }
